@@ -11,3 +11,11 @@ metadata:
   namespace: capi-system
 spec:
   version: v1.4.3
+---
+apiVersion: operator.cluster.x-k8s.io/v1alpha1
+kind: InfrastructureProvider
+metadata:
+  name: sidero
+  namespace: capi-system
+spec:
+  version: v0.6.1

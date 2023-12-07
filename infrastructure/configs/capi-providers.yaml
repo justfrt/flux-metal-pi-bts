@@ -12,6 +12,18 @@ metadata:
 spec:
   version: v1.4.3
 ---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: provider-config
+  namespace: capi-system
+type: Opaque
+data:
+  SIDERO_CONTROLLER_MANAGER_HOST_NETWORK: "true"
+  SIDERO_CONTROLLER_MANAGER_DEPLOYMENT_STRATEGY: "Recreate"
+  SIDERO_CONTROLLER_MANAGER_API_ENDPOINT: "192.168.0.11"
+  SIDERO_CONTROLLER_MANAGER_AUTO_BMC_SETUP: "false"
+---
 apiVersion: operator.cluster.x-k8s.io/v1alpha1
 kind: InfrastructureProvider
 metadata:
@@ -19,6 +31,8 @@ metadata:
   namespace: capi-system
 spec:
   version: v0.6.1
+  secretName: provider-config
+  secretNamespace: capi-system
 ---
 apiVersion: operator.cluster.x-k8s.io/v1alpha1
 kind: BootstrapProvider

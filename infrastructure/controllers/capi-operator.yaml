@@ -19,6 +19,8 @@ metadata:
   name: capi-operator
   namespace: capi-operator-system
 spec:
+  dependsOn:
+    - name: cert-manager
   interval: 30m
   chart:
     spec:

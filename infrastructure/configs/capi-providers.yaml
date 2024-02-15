@@ -24,7 +24,7 @@ data:
   SIDERO_CONTROLLER_MANAGER_API_ENDPOINT: MTkyLjE2OC4wLjEx
   SIDERO_CONTROLLER_MANAGER_AUTO_BMC_SETUP: ZmFsc2U=
 ---
-apiVersion: operator.cluster.x-k8s.io/v1alpha1
+apiVersion: operator.cluster.x-k8s.io/v1alpha2
 kind: InfrastructureProvider
 metadata:
   name: sidero
@@ -35,7 +35,7 @@ spec:
     name: provider-config
     namespace: capi-system
 ---
-apiVersion: operator.cluster.x-k8s.io/v1alpha1
+apiVersion: operator.cluster.x-k8s.io/v1alpha2
 kind: BootstrapProvider
 metadata:
   name: talos
@@ -43,7 +43,7 @@ metadata:
 spec:
   version: v0.6.2
 ---
-apiVersion: operator.cluster.x-k8s.io/v1alpha1
+apiVersion: operator.cluster.x-k8s.io/v1alpha2
 kind: ControlPlaneProvider
 metadata:
   name: talos
